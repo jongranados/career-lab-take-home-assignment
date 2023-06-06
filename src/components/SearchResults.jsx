@@ -9,7 +9,11 @@ export function SearchResults({ cachedResults }) {
 				const title = cachedDatum.title;
 				const artist = cachedDatum.artist_title ?? 'Unknown Author';
 
-				return <li key={imageId}>{`${title} by ${artist}`}</li>;
+				return (
+					<li key={imageId}>
+						<a href={`./${imageId}`}>{`${title} by ${artist}`}</a>
+					</li>
+				);
 			})}
 		</ul>
 	);
