@@ -5,7 +5,6 @@ export function ImageDetailsPage({ selectedArt, setSelectedArt }) {
 	const imageId = selectedArt.image_id;
 	const imageUrl = `https://www.artic.edu/iiif/2/${imageId}/full/843,/0/default.jpg`;
 
-	console.log(selectedArt);
 	function buttonClickHandler() {
 		setSelectedArt();
 	}

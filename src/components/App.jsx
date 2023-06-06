@@ -11,7 +11,6 @@ import { ImageDetailsPage } from './ImageDetailsPage';
 export function App() {
 	const [cachedResults, setCachedData] = useState();
 	const [selectedArt, setSelectedArt] = useState();
-	// console.log('in App.jsx', selectedArt)
 	function onSearchSubmit(query) {
 		// Search for the users's query.
 		// TODO: render the results, instead of logging them to the console.
