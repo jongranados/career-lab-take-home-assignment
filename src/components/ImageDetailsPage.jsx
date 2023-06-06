@@ -1,3 +1,6 @@
-export function ImageDetailsPage() {
-	return <>Hello from Image Details Page</>;
+export function ImageDetailsPage({ selectedArt, setSelectedArt }) {
+	function buttonClickHandler() {
+		setSelectedArt(false);
+	}
+	return <button onClick={() => buttonClickHandler()}>Back to Results</button>;
 }

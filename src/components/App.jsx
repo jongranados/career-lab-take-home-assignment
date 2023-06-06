@@ -38,7 +38,10 @@ export function App() {
 					<Footer />
 				</>
 			) : (
-				<ImageDetailsPage selectedArt={selectedArt}></ImageDetailsPage>
+				<ImageDetailsPage
+					selectedArt={selectedArt}
+					setSelectedArt={setSelectedArt}
+				></ImageDetailsPage>
 			)}
 		</div>
 	);
