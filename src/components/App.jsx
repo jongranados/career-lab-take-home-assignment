@@ -6,6 +6,7 @@ import { Footer } from './Footer';
 import { SearchResults } from './SearchResults';
 
 import './App.css';
+import { ImageDetailsPage } from './ImageDetailsPage';
 
 export function App() {
 	const [cachedResults, setCachedData] = useState();
@@ -27,6 +28,7 @@ export function App() {
 			<h1>TCL Career Lab Art Finder</h1>
 			<SearchForm onSearchSubmit={onSearchSubmit} />
 			<SearchResults cachedResults={cachedResults} />
+			<ImageDetailsPage></ImageDetailsPage>
 			<Footer />
 		</div>
 	);
