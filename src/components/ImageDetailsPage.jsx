@@ -1,9 +1,9 @@
 export function ImageDetailsPage({ selectedArt, setSelectedArt }) {
 	const artist = selectedArt.artist_title ?? 'Unknown Artist';
 	const title = selectedArt.title;
-	const altText = selectedArt.thumbnail.alt_text;
-	const imageId = selectedArt.image_id;
-	const imageUrl = `https://www.artic.edu/iiif/2/${imageId}/full/843,/0/default.jpg`;
+	const altText = selectedArt.thumbnail?.alt_text;
+	const imageUrl = `https://www.artic.edu/iiif/2/${selectedArt.image_id}/full/843,/0/default.jpg`;
+	const thumbnailExists = Boolean(selectedArt.thumbnail);
 
 	function buttonClickHandler() {
 		setSelectedArt();
@@ -32,7 +32,14 @@ export function ImageDetailsPage({ selectedArt, setSelectedArt }) {
 			>
 				Back to Results
 			</button>
-			<img alt={altText} src={imageUrl} />
+
+			{thumbnailExists ? (
+				<img alt={altText} src={imageUrl} />
+			) : (
+				<p style={{ margin: '0 auto', fontWeight: 'bold' }}>
+					Sorry, we do not have a thumbnail for this art piece.
+				</p>
+			)}
 		</>
 	);
 }
