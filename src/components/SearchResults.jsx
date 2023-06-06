@@ -1,6 +1,11 @@
-export function SearchResults({ cachedResults }) {
+export function SearchResults({ cachedResults, setSelectedArt }) {
 	if (!cachedResults) return;
 	const { data } = cachedResults;
+
+	function handleClick(event, cachedDatum) {
+		event.preventDefault();
+		setSelectedArt(cachedDatum);
+	}
 
 	return (
 		<ul>
@@ -11,7 +16,10 @@ export function SearchResults({ cachedResults }) {
 
 				return (
 					<li key={imageId}>
-						<a href={`./${imageId}`}>{`${title} by ${artist}`}</a>
+						<a
+							href={`./${imageId}`}
+							onClick={(event) => handleClick(event, cachedDatum)}
+						>{`${title} by ${artist}`}</a>
 					</li>
 				);
 			})}
