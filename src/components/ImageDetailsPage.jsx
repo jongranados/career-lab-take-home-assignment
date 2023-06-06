@@ -10,11 +10,28 @@ export function ImageDetailsPage({ selectedArt, setSelectedArt }) {
 	}
 	return (
 		<>
-			<div>
+			<div
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'start',
+				}}
+			>
 				<h1>{title}</h1>
-				<h2>{`by ${artist}`}</h2>
-				<button onClick={() => buttonClickHandler()}>Back to Results</button>
+				<h2>{`- ${artist}`}</h2>
 			</div>
+			<button
+				style={{
+					margin: '0 auto 3rem',
+					padding: '1rem',
+					width: 'fit-content',
+					fontSize: '2rem',
+					fontWeight: 'bold',
+				}}
+				onClick={() => buttonClickHandler()}
+			>
+				Back to Results
+			</button>
 			<img alt={altText} src={imageUrl} />
 		</>
 	);
