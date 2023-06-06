@@ -10,6 +10,8 @@ import { ImageDetailsPage } from './ImageDetailsPage';
 
 export function App() {
 	const [cachedResults, setCachedData] = useState();
+	const [selectedArt, setSelectedArt] = useState();
+	// console.log('in App.jsx', selectedArt)
 	function onSearchSubmit(query) {
 		// Search for the users's query.
 		// TODO: render the results, instead of logging them to the console.
@@ -25,11 +27,19 @@ export function App() {
 
 	return (
 		<div className="App">
-			<h1>TCL Career Lab Art Finder</h1>
-			<SearchForm onSearchSubmit={onSearchSubmit} />
-			<SearchResults cachedResults={cachedResults} />
-			<ImageDetailsPage></ImageDetailsPage>
-			<Footer />
+			{!selectedArt ? (
+				<>
+					<h1>TCL Career Lab Art Finder</h1>
+					<SearchForm onSearchSubmit={onSearchSubmit} />
+					<SearchResults
+						cachedResults={cachedResults}
+						setSelectedArt={setSelectedArt}
+					/>
+					<Footer />
+				</>
+			) : (
+				<ImageDetailsPage selectedArt={selectedArt}></ImageDetailsPage>
+			)}
 		</div>
 	);
 }
