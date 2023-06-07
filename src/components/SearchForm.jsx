@@ -23,6 +23,7 @@ export function SearchForm({ onSearchSubmit }) {
 				id="search-field"
 				inputMode="search"
 				name="query"
+				required
 				type="text"
 				value={query}
 				onChange={handleInputChange}
