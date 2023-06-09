@@ -18,7 +18,7 @@ export function SearchResults({ cachedResults, setSelectedArt }) {
 					<li key={imageId}>
 						<a
 							href={`./${imageId}`}
-							style={{ color: 'black', fontSize: '2rem', lineHeight: '3rem' }}
+							style={{ color: 'inherit', fontSize: '2rem', lineHeight: '3rem' }}
 							onClick={(event) => handleClick(event, cachedDatum)}
 						>{`${title} by ${artist}`}</a>
 					</li>
